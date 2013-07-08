@@ -67,15 +67,14 @@ for installing  capistrano first we need to install ruby .
     # use your local repository as the source
      set :repository, "file://#{File.expand_path('.')}"
 
-    # or use a hosted repository
+   # or use a hosted repository
     #set :repository, "ssh://user@example.com/~/git/test.git"
     server "#{domain}", :app, :web, :db, :primary => true
-
     set :deploy_via, :copy
     set :copy_exclude, [".git", ".DS_Store"]
     set :scm, :git
     set :branch, "master"
-   # set this path to be correct on yoru server
+  # set this path to be correct on yoru server
     set :deploy_to, "/home/#{user}/public_html/#{application}"
     set :use_sudo, false
     set :keep_releases, 2
@@ -83,7 +82,7 @@ for installing  capistrano first we need to install ruby .
 
    ssh_options[:paranoid] = false
 
-    # this tells capistrano what to do when you deploy
+   # this tells capistrano what to do when you deploy
     namespace :deploy do
 
   desc <<-DESC
